@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# OculoStack (MGAE-V15) 👁️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Deployment](https://img.shields.io/badge/Deployment-Docker-blue.svg)](#)
+[![Architecture](https://img.shields.io/badge/Architecture-Offline--First-success.svg)](#)
+[![Deep Learning](https://img.shields.io/badge/Backend-TensorFlow%20%7C%20Keras-orange.svg)](#)
 
-## Available Scripts
+OculoStack is a decentralized, offline-first, AI-driven diagnostic pipeline for ophthalmic diseases. Utilizing a multi-model ensemble (MGAE-V15), it analyzes both visual pixel data and device-generated EXIF metadata to provide high-accuracy detection and severity grading for multiple eye conditions.
 
-In the project directory, you can run:
+## 🚀 Core Features
 
-### `npm start`
+* **Multi-Disease Diagnostic Matrix:** Detects and grades the severity of Diabetic Retinopathy, Glaucoma, Cataracts, and Conjunctivitis.
+* **Offline-First Architecture:** Decentralized local data storage allows the pipeline to function seamlessly in remote or low-connectivity environments.
+* **Two-Stream Inference Engine:** Dynamically adjusts model ensemble weights during inference using both visual data and hardware EXIF metadata.
+* **Visual Explainability:** Integrates Grad-CAM to generate visual heatmaps, highlighting the specific regions triggering the diagnosis.
+* **Automated Clinical Reporting:** Transforms raw inference data and Grad-CAM outputs into structured, readable clinical reports.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧠 System Architecture (Six-Layer Topology)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Mobile Application:** Offline-capable UI for image capture and metadata extraction.
+2. **Preprocessing Pipeline:** Applies Contrast Limited Adaptive Histogram Equalization (CLAHE) and Gaussian noise reduction.
+3. **MGAE Inference Engine:** A robust ensemble utilizing:
+   * `EfficientNet-B4`
+   * `ResNet-50`
+   * `MobileNet-V3`
+4. **Explainability Layer:** Grad-CAM generation for diagnostic transparency.
+5. **Clinical Report Generation:** Automated data structuring and formatting.
+6. **Federated Learning Support:** Secure, privacy-preserving model updates across distributed devices.
 
-### `npm test`
+## 🛠️ Local Development & Deployment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project utilizes Docker to ensure consistent environments across the complex MGAE inference engine.
 
-### `npm run build`
+### Prerequisites
+* Docker & Docker Compose
+* Python 3.10+ (for local script execution)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

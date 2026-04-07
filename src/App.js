@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useRef } from 'react';
 import Webcam from "react-webcam";
 import * as ort from 'onnxruntime-web';
